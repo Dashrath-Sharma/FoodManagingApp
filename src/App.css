@@ -5,3 +5,7 @@
   padding: 15px;
   background-color: #12343b;
 }
+
+button, input {
+  border-radius: 5px;
+}
