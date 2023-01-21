@@ -11,7 +11,10 @@ const Search = ({getDataFromSearchComponent}) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        if(value.trim() !== "")
         getDataFromSearchComponent(value)
+        else 
+        console.log("Empty Field")
     }
     return (
         <form className="Search">

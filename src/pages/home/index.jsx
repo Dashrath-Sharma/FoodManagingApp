@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import ReceipeItem from '../../components/receipe-item'
 import Search from "../../components/search"
-
+import './styles.css'
 
 
 const Home = () => {
@@ -14,18 +15,29 @@ const Home = () => {
             const result = await apiRes.json()
             if(result.number > 0){
                 setIsLoading(false)
-                setReceipes(result)
+                setReceipes(result.results)
                 console.log(receipes, "receipes")
             }
         }
         getReceipes()
     }
 
-    console.log(isLoading, receipes, "isLoading, receipes")
 
     return (
         <div className="Home">
             <Search getDataFromSearchComponent={getDataFromSearchComponent} />
+            {/* show loading state */}
+            {
+                isLoading && <div className='loading'>Loading receipes! Please wait.</div>
+            }
+            {/* show loading state */}
+
+            {/* Map Receipes */}
+            {
+                receipes && receipes.length > 0 ? receipes?.map(receipe => <ReceipeItem receipe={receipe} key={receipe.id} />) :
+                null
+            }
+            {/* Map Receipes */}
         </div>
     )
 }
