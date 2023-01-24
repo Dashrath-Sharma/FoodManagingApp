@@ -1,4 +1,4 @@
-.receipe-item{
+.receipe-item {
     border: 1px solid red;
     padding: 8px;
     box-shadow: 0px 0px 10px 0px rgba(250, 100, 0, 1);
@@ -11,12 +11,13 @@
     /* height: /?; */
 }
 
-.receipe-item p{
+.receipe-item p {
     color: #fa6400;
     font-weight: 700;
     font-size: 20px;
     margin: 12px 0 12px 0;
 }
+
 .receipe-item button {
     background-color: #fa6400;
     border: 1px solid transparent;
@@ -29,5 +30,5 @@
     justify-content: center;
     line-height: 1.25;
     margin: 0;
-    padding:10px 25px;
+    padding: 10px 25px;
 }

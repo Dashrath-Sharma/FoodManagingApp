@@ -1,14 +1,14 @@
 import './styles.css'
 
-const ReceipeItem = ({ receipe }) => {
+const ReceipeItem = ({ receipe, handleClick }) => {
     const { id, image, title } = receipe
     return (
-        <div className='receipe-item'>
+        <div key={id} className='receipe-item'>
             <div>
                 <img src={image} alt={title} />
             </div>
             <p>{title}</p>
-            <button>Add to Favorites</button>
+            <button onClick={handleClick}>Add to Favorites</button>
         </div>
     )
 }

@@ -5,7 +5,8 @@ import './styles.css'
 
 
 const Home = () => {
-    const [receipes, setReceipes] = useState({})
+    const [receipes, setReceipes] = useState([])
+    const [favorites, setFavorites] = useState([])
     const [isLoading, setIsLoading] = useState(false)
 
     const getDataFromSearchComponent = (data) => {
@@ -19,6 +20,10 @@ const Home = () => {
             }
         }
         getReceipes()
+    }
+
+    const handleFavorites = () =>{
+
     }
 
 
@@ -35,7 +40,7 @@ const Home = () => {
             <div className='items'>
                 {
                     receipes && receipes.length > 0 ?
-                        receipes?.map(receipe => <ReceipeItem receipe={receipe} key={receipe.id} />) :
+                        receipes?.map(receipe => <ReceipeItem receipe={receipe} key={receipe.id} handleClick={handleFavorites} />) :
                         null
                 }
             </div>
