@@ -1,9 +1,14 @@
-const ReceipeItem = ({receipe}) => {
-    const {id, image, title} = receipe
-    return(
-        <div> 
-            <img src={image} alt={title} />
-            <h3>{title}</h3>
+import './styles.css'
+
+const ReceipeItem = ({ receipe }) => {
+    const { id, image, title } = receipe
+    return (
+        <div className='receipe-item'>
+            <div>
+                <img src={image} alt={title} />
+            </div>
+            <p>{title}</p>
+            <button>Add to Favorites</button>
         </div>
     )
 }

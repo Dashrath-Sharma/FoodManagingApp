@@ -10,13 +10,12 @@ const Home = () => {
 
     const getDataFromSearchComponent = (data) => {
         setIsLoading(true)
-        async function getReceipes(){
+        async function getReceipes() {
             const apiRes = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=fa2b6ffcafe947f19a265d99e66389f5&query${data}`)
             const result = await apiRes.json()
-            if(result.number > 0){
+            if (result.number > 0) {
                 setIsLoading(false)
                 setReceipes(result.results)
-                console.log(receipes, "receipes")
             }
         }
         getReceipes()
@@ -33,10 +32,13 @@ const Home = () => {
             {/* show loading state */}
 
             {/* Map Receipes */}
-            {
-                receipes && receipes.length > 0 ? receipes?.map(receipe => <ReceipeItem receipe={receipe} key={receipe.id} />) :
-                null
-            }
+            <div className='items'>
+                {
+                    receipes && receipes.length > 0 ?
+                        receipes?.map(receipe => <ReceipeItem receipe={receipe} key={receipe.id} />) :
+                        null
+                }
+            </div>
             {/* Map Receipes */}
         </div>
     )
